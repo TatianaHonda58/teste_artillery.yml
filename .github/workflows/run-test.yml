@@ -9,4 +9,5 @@ jobs:
       - name: Instalar o Robô
         run: npm install -g artillery
       - name: Executar o Ataque de Robôs 🤖
+      
         run: artillery run --record --key ${{ secrets.ARTILLERY_API_KEY }} test.yml
