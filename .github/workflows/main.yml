@@ -1,0 +1,12 @@
+name: Rodar Teste do Artillery
+on: [push] # Sempre que você salvar algo, o teste roda!
+
+jobs:
+  teste:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Instalar Artillery
+        run: npm install -g artillery
+      - name: Rodar o Teste
+        run: artillery run script.yml
