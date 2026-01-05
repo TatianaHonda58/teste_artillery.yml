@@ -1,0 +1,12 @@
+name: Rodar Teste de Performance
+on: [push] # Sempre que você mudar o código, o robô começa!
+
+jobs:
+  run-artillery:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Instalar o Robô
+        run: npm install -g artillery
+      - name: Executar o Ataque de Robôs 🤖
+        run: artillery run --record --key ${{ secrets.ARTILLERY_API_KEY }} test.yml
