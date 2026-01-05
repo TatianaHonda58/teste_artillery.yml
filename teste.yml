@@ -1,0 +1,12 @@
+config:
+  target: "https://sistema.scadiagro.com.br/api" # Onde o robô vai atacar
+  phases:
+    - duration: 60          # O teste vai durar 60 segundos (1 minuto)
+      arrivalRate: 5        # Vão chegar 5 robôs novos a cada segundo
+      name: "Teste de Aquecimento"
+
+scenarios:
+  - name: "Ver o mapa da API (Swagger)"
+    flow:
+      - get:
+          url: "/v3/api-docs" # O caminho que você me deu!
